@@ -14,18 +14,18 @@ pub struct Pixel<C: PixelColor>(pub Point, pub C);
 /// over pixels being rendered with [`DrawTarget`]'s [`draw_iter`] method.
 ///
 /// ```rust
-/// use embedded_graphics::prelude::*;
-/// use embedded_graphics::{egrectangle, egtext};
 /// use embedded_graphics::fonts::Font6x8;
 /// use embedded_graphics::geometry::Point;
-/// use embedded_graphics::pixelcolor::{PixelColor, BinaryColor, Rgb888};
+/// use embedded_graphics::pixelcolor::{BinaryColor, PixelColor, Rgb888};
+/// use embedded_graphics::prelude::*;
+/// use embedded_graphics::{egrectangle, egtext};
 ///
 /// struct Button<'a, C: PixelColor> {
 ///     top_left: Point,
 ///     bottom_right: Point,
 ///     bg_color: C,
 ///     fg_color: C,
-///     text: &'a str
+///     text: &'a str,
 /// }
 ///
 /// impl<'a, C: 'a> Drawable<C> for &Button<'a, C>
@@ -33,9 +33,19 @@ pub struct Pixel<C: PixelColor>(pub Point, pub C);
 ///     C: PixelColor + From<BinaryColor>,
 /// {
 ///     fn draw<D: DrawTarget<C>>(self, display: &mut D) {
-///         egrectangle!(top_left = self.top_left, bottom_right = self.bottom_right, fill_color = Some(self.bg_color)).draw(display);
-///         egtext!(text = self.text, top_left = Point::new(20, 20), font = Font6x8, text_color = Some(self.fg_color))
-///             .draw(display);
+///         egrectangle!(
+///             top_left = self.top_left,
+///             bottom_right = self.bottom_right,
+///             fill_color = Some(self.bg_color)
+///         )
+///         .draw(display);
+///         egtext!(
+///             text = self.text,
+///             top_left = Point::new(20, 20),
+///             font = Font6x8,
+///             text_color = Some(self.fg_color)
+///         )
+///         .draw(display);
 ///     }
 /// }
 ///
@@ -51,7 +61,6 @@ pub struct Pixel<C: PixelColor>(pub Point, pub C);
 ///     # let mut display = MockDisplay::default();
 ///     button.draw(&mut display);
 /// }
-///
 /// ```
 ///
 /// [`DrawTarget`]: ../trait.DrawTarget.html

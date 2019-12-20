@@ -18,9 +18,9 @@ use crate::DrawTarget;
 /// ## Create some triangles with different styles
 ///
 /// ```rust
+/// use embedded_graphics::pixelcolor::Rgb565;
 /// use embedded_graphics::prelude::*;
 /// use embedded_graphics::primitives::Triangle;
-/// use embedded_graphics::pixelcolor::Rgb565;
 /// use embedded_graphics::style::PrimitiveStyle;
 /// # use embedded_graphics::mock_display::MockDisplay;
 /// # let mut display = MockDisplay::default();

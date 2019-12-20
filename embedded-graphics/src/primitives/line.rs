@@ -17,9 +17,9 @@ use crate::DrawTarget;
 /// ## Create some lines with different styles
 ///
 /// ```rust
+/// use embedded_graphics::pixelcolor::Rgb565;
 /// use embedded_graphics::prelude::*;
 /// use embedded_graphics::primitives::Line;
-/// use embedded_graphics::pixelcolor::Rgb565;
 /// use embedded_graphics::style::PrimitiveStyle;
 /// # use embedded_graphics::mock_display::MockDisplay;
 /// # let mut display = MockDisplay::default();
@@ -141,7 +141,7 @@ where
             delta,
             direction,
             err: delta.x + delta.y,
-            stop: self.primitive.start == self.primitive.end, // if line length is zero, draw nothing
+            stop: self.primitive.start == self.primitive.end, /* if line length is zero, draw nothing */
         }
     }
 }

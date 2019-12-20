@@ -30,9 +30,9 @@ pub type ImageBE<'a, C> = Image<'a, C, BigEndian>;
 /// This example creates an image from 1 bit per pixel data:
 ///
 /// ```
-/// use embedded_graphics::prelude::*;
 /// use embedded_graphics::image::Image;
 /// use embedded_graphics::pixelcolor::BinaryColor;
+/// use embedded_graphics::prelude::*;
 /// # use embedded_graphics::mock_display::MockDisplay as Display;
 ///
 /// /// Image data with 12 x 5 pixels.
@@ -62,10 +62,10 @@ pub type ImageBE<'a, C> = Image<'a, C, BigEndian>;
 /// to abbreviate the type.
 ///
 /// ```
-/// use embedded_graphics::prelude::*;
-/// use embedded_graphics::image::{ImageLE, ImageBE, Image};
-/// use embedded_graphics::pixelcolor::{Rgb565, Rgb888};
+/// use embedded_graphics::image::{Image, ImageBE, ImageLE};
 /// use embedded_graphics::pixelcolor::raw::{BigEndian, LittleEndian};
+/// use embedded_graphics::pixelcolor::{Rgb565, Rgb888};
+/// use embedded_graphics::prelude::*;
 /// # const DATA: &[u8] = &[0x55; 8 * 8 * 3];
 ///
 /// // Rgb888 image with 24 bits per pixel and big endian byte order
@@ -173,7 +173,7 @@ where
     /// # use embedded_graphics::geometry::Point;
     /// #
     /// // 8px x 1px test image
-    /// let image: Image<BinaryColor> = Image::new(&[ 0xff ], 8, 1);
+    /// let image: Image<BinaryColor> = Image::new(&[0xff], 8, 1);
     /// let moved = image.translate(Point::new(25, 30));
     ///
     /// assert_eq!(image.offset(), Point::new(0, 0));
@@ -195,7 +195,7 @@ where
     /// # use embedded_graphics::transform::Transform;
     /// # use embedded_graphics::geometry::Point;
     /// #
-    /// let mut image: Image<BinaryColor> = Image::new(&[ 0xff ], 8, 1);
+    /// let mut image: Image<BinaryColor> = Image::new(&[0xff], 8, 1);
     /// image.translate_mut(Point::new(25, 30));
     ///
     /// assert_eq!(image.offset(), Point::new(25, 30));

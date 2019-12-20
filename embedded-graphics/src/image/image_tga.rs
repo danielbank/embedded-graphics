@@ -17,8 +17,8 @@ use tinytga::{Tga, TgaIterator};
 /// ## Load a 16 bit per pixel image from a raw byte slice and draw it to a display
 ///
 /// ```rust
-/// use embedded_graphics::prelude::*;
 /// use embedded_graphics::image::ImageTga;
+/// use embedded_graphics::prelude::*;
 /// # use embedded_graphics::mock_display::MockDisplay;
 /// # use embedded_graphics::pixelcolor::Rgb888;
 /// # let mut display: MockDisplay<Rgb888> = MockDisplay::default();

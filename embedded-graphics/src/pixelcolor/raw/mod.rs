@@ -16,9 +16,9 @@
 //! an additional intensity bit.
 //!
 //! ```rust
-//! use embedded_graphics::prelude::*;
 //! use embedded_graphics::image::Image;
 //! use embedded_graphics::pixelcolor::raw::RawU4;
+//! use embedded_graphics::prelude::*;
 //!
 //! /// RGBI color
 //! #[derive(Debug, Clone, Copy, PartialEq, Eq)]

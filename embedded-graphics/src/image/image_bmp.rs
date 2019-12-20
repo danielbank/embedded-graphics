@@ -17,8 +17,8 @@ use tinybmp::Bmp;
 /// ## Load a 16 bit per pixel image from a raw byte slice and draw it to a display
 ///
 /// ```rust
-/// use embedded_graphics::prelude::*;
 /// use embedded_graphics::image::ImageBmp;
+/// use embedded_graphics::prelude::*;
 /// # use embedded_graphics::mock_display::MockDisplay;
 /// # use embedded_graphics::pixelcolor::Rgb565;
 /// # let mut display: MockDisplay<Rgb565> = MockDisplay::default();

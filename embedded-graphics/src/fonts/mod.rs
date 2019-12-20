@@ -18,10 +18,10 @@
 //! without using the [`egtext`] macro, it can be reused to style multiple text objects.
 //!
 //! ```rust
-//! use embedded_graphics::prelude::*;
-//! use embedded_graphics::fonts::{Text, Font6x8};
-//! use embedded_graphics::style::TextStyle;
+//! use embedded_graphics::fonts::{Font6x8, Text};
 //! use embedded_graphics::pixelcolor::Rgb565;
+//! use embedded_graphics::prelude::*;
+//! use embedded_graphics::style::TextStyle;
 //! # use embedded_graphics::mock_display::MockDisplay;
 //! # let mut display: MockDisplay<Rgb565> = MockDisplay::default();
 //!
@@ -47,10 +47,10 @@
 //! the [`egtext`] macro to build the necessary styled text objects.
 //!
 //! ```rust
-//! use embedded_graphics::prelude::*;
-//! use embedded_graphics::fonts::Font6x8;
 //! use embedded_graphics::egtext;
+//! use embedded_graphics::fonts::Font6x8;
 //! use embedded_graphics::pixelcolor::Rgb565;
+//! use embedded_graphics::prelude::*;
 //! # use embedded_graphics::mock_display::MockDisplay;
 //! # let mut display: MockDisplay<Rgb565> = MockDisplay::default();
 //!
@@ -60,15 +60,16 @@
 //!     font = Font6x8,
 //!     text_color = Some(Rgb565::YELLOW),
 //!     background_color = Some(Rgb565::BLUE),
-//! ).draw(&mut display);
+//! )
+//! .draw(&mut display);
 //! ```
 //! ## Translate text by (20px, 30px)
 //!
 //! ```rust
-//! use embedded_graphics::prelude::*;
-//! use embedded_graphics::fonts::{Text, Font6x8};
-//! use embedded_graphics::style::TextStyle;
+//! use embedded_graphics::fonts::{Font6x8, Text};
 //! use embedded_graphics::pixelcolor::BinaryColor;
+//! use embedded_graphics::prelude::*;
+//! use embedded_graphics::style::TextStyle;
 //! # use embedded_graphics::mock_display::MockDisplay;
 //! # let mut display: MockDisplay<BinaryColor> = MockDisplay::default();
 //!
@@ -93,10 +94,10 @@
 //! ```rust
 //! use arrayvec::ArrayString;
 //! use core::fmt::Write;
+//! use embedded_graphics::egtext;
 //! use embedded_graphics::fonts::Font6x8;
 //! use embedded_graphics::pixelcolor::Rgb565;
 //! use embedded_graphics::prelude::*;
-//! use embedded_graphics::egtext;
 //! # use embedded_graphics::mock_display::MockDisplay;
 //! # let mut display = MockDisplay::default();
 //!
@@ -114,7 +115,8 @@
 //!     font = Font6x8,
 //!     text_color = Some(Rgb565::YELLOW),
 //!     background_color = Some(Rgb565::BLUE),
-//! ).draw(&mut display);
+//! )
+//! .draw(&mut display);
 //! ```
 //!
 //! # Built-in fonts
@@ -187,10 +189,10 @@ pub trait Font {
 /// # Examples
 ///
 /// ```rust
-/// use embedded_graphics::prelude::*;
-/// use embedded_graphics::pixelcolor::Rgb888;
-/// use embedded_graphics::fonts::Font6x8;
 /// use embedded_graphics::egtext;
+/// use embedded_graphics::fonts::Font6x8;
+/// use embedded_graphics::pixelcolor::Rgb888;
+/// use embedded_graphics::prelude::*;
 ///
 /// let text = egtext!(
 ///     text = "text",
