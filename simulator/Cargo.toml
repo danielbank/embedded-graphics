@@ -23,6 +23,7 @@ circle-ci = { repository = "jamwaffles/embedded-graphics", branch = "master" }
 [dependencies]
 sdl2 = "0.32.2"
 num = {version="0.2.0", default-features=false}
+heapless = "0.5.1"
 
 [dependencies.embedded-graphics]
 version = "0.6.0-alpha.2"

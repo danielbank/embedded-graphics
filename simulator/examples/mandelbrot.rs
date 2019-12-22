@@ -1,10 +1,9 @@
-use embedded_graphics::fonts::{Font6x8, Text};
 use embedded_graphics::image::Image;
 use embedded_graphics::pixelcolor::Gray8;
 use embedded_graphics::prelude::*;
-use embedded_graphics::primitives::{Circle, Line};
-use embedded_graphics::style::{PrimitiveStyle, TextStyle};
 use embedded_graphics_simulator::{BinaryColorTheme, SimulatorDisplay, WindowBuilder};
+use heapless::consts::*;
+use heapless::Vec;
 use num::Complex;
 
 fn render(
@@ -13,6 +12,8 @@ fn render(
     upper_left: Complex<f64>,
     lower_right: Complex<f64>,
 ) {
+    println!("{:?}", bounds);
+    println!("{:?}", pixels.len());
     assert!(pixels.len() == bounds.0 * bounds.1);
     for row in 0..bounds.1 {
         for column in 0..bounds.0 {
@@ -57,7 +58,13 @@ fn main() {
     let bounds = (120, 120);
     let upper_left = Complex::new(-0.3, 0.4);
     let lower_right = Complex::new(0.4, -0.4);
-    let mut pixels = vec![0; bounds.0 * bounds.1];
+    let mut pixels: Vec<u8, U16384> = Vec::new();
+    let mut i = 0;
+    while i < bounds.0 * bounds.1 {
+        pixels.push(0).unwrap();
+        i += 1;
+    }
+
     render(&mut pixels, bounds, upper_left, lower_right);
 
     let mut display = SimulatorDisplay::new(Size::new(120, 120));
